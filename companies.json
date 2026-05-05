@@ -1,13 +1,14 @@
 [
-  { "name": "Razorpay",     "linkedin": "razorpay" },
-  { "name": "CRED",         "linkedin": "dreamplug-technologies" },
-  { "name": "Groww",        "linkedin": "groww-invest" },
-  { "name": "Swiggy",       "linkedin": "swiggy" },
-  { "name": "PhonePe",      "linkedin": "phonepe" },
-  { "name": "Meesho",       "linkedin": "meesho" },
-  { "name": "Zepto",        "linkedin": "zepto-app" },
-  { "name": "BrowserStack", "linkedin": "browserstack" },
-  { "name": "Freshworks",   "linkedin": "freshworks-inc-" },
-  { "name": "Atlassian",    "linkedin": "atlassian" },
-  { "name": "Zomato",       "linkedin": "zomato" }
+  { "name": "Razorpay",     "ats": "greenhouse", "slug": "razorpay",      "linkedin": "1288894"   },
+  { "name": "CRED",         "ats": "greenhouse", "slug": "dreamplug",     "linkedin": "dreamplug-technologies" },
+  { "name": "Swiggy",       "ats": "greenhouse", "slug": "swiggy",        "linkedin": "swiggy"    },
+  { "name": "BrowserStack", "ats": "greenhouse", "slug": "browserstack",  "linkedin": "browserstack" },
+  { "name": "Hasura",       "ats": "greenhouse", "slug": "hasura",        "linkedin": "hasura-io" },
+  { "name": "Meesho",       "ats": "greenhouse", "slug": "meesho",        "linkedin": "meesho"    },
+  { "name": "Freshworks",   "ats": "greenhouse", "slug": "freshworks",    "linkedin": "freshworks-inc-" },
+  { "name": "Whatfix",      "ats": "greenhouse", "slug": "whatfix",       "linkedin": "whatfix"   },
+  { "name": "CleverTap",    "ats": "greenhouse", "slug": "clevertap",     "linkedin": "clevertap" },
+  { "name": "Groww",        "ats": "lever",      "slug": "groww",         "linkedin": "groww-invest" },
+  { "name": "Zepto",        "ats": "lever",      "slug": "zepto",         "linkedin": "zepto-app" },
+  { "name": "Darwinbox",    "ats": "lever",      "slug": "darwinbox",     "linkedin": "darwinbox" }
 ]
