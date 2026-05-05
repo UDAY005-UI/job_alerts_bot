@@ -167,6 +167,7 @@
   { "group": "EDTECH_HEALTH", "name": "MediBuddy", "ats": "linkedin", "slug": "", "linkedin": "10405853" },
   { "group": "EDTECH_HEALTH", "name": "PharmEasy", "ats": "linkedin", "slug": "", "linkedin": "5319456" },
   { "group": "EDTECH_HEALTH", "name": "Pristyn Care", "ats": "linkedin", "slug": "", "linkedin": "18893054" },
+
   { "group": "AI_FIRST", "name": "Neysa", "ats": "linkedin", "slug": "", "linkedin": "99587421" },
   { "group": "AI_FIRST", "name": "Agara Labs", "ats": "linkedin", "slug": "", "linkedin": "18872004" },
   { "group": "AI_FIRST", "name": "Simplismart", "ats": "linkedin", "slug": "", "linkedin": "91051628" },
@@ -231,5 +232,38 @@
   { "group": "B2B_SAAS_NEW", "name": "Zluri", "ats": "linkedin", "slug": "", "linkedin": "68878249" },
   { "group": "B2B_SAAS_NEW", "name": "Appsmith", "ats": "linkedin", "slug": "", "linkedin": "68878251" },
   { "group": "B2B_SAAS_NEW", "name": "Tooljet", "ats": "linkedin", "slug": "", "linkedin": "76100247" },
-  { "group": "B2B_SAAS_NEW", "name": "DronaHQ", "ats": "linkedin", "slug": "", "linkedin": "3476231" }
+  { "group": "B2B_SAAS_NEW", "name": "DronaHQ", "ats": "linkedin", "slug": "", "linkedin": "3476231" },
+
+    { "group": "SWEDEN_REMOTE_GLOBAL", "name": "Spotify", "ats": "greenhouse", "slug": "spotify", "linkedin": "440" },
+  { "group": "SWEDEN_REMOTE_GLOBAL", "name": "Klarna", "ats": "greenhouse", "slug": "klarna", "linkedin": "300715" },
+  { "group": "SWEDEN_REMOTE_GLOBAL", "name": "Truecaller", "ats": "greenhouse", "slug": "truecaller", "linkedin": "1246550" },
+  { "group": "SWEDEN_REMOTE_GLOBAL", "name": "Sinch", "ats": "greenhouse", "slug": "sinch", "linkedin": "3228186" },
+  { "group": "SWEDEN_REMOTE_GLOBAL", "name": "Epidemic Sound", "ats": "greenhouse", "slug": "epidemicsound", "linkedin": "2497521" },
+  { "group": "SWEDEN_REMOTE_GLOBAL", "name": "Lovable", "ats": "ashbyhq", "slug": "lovable", "linkedin": "99489640" },
+  { "group": "SWEDEN_REMOTE_GLOBAL", "name": "Tink (Visa)", "ats": "greenhouse", "slug": "tink", "linkedin": "2987060" },
+  { "group": "SWEDEN_REMOTE_GLOBAL", "name": "Paradox Interactive", "ats": "linkedin", "slug": "", "linkedin": "622768" },
+
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Ericsson", "ats": "linkedin", "slug": "", "linkedin": "3813" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "King (Activision)", "ats": "linkedin", "slug": "", "linkedin": "3051672" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Mojang Studios (Microsoft)", "ats": "linkedin", "slug": "", "linkedin": "2892114" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Trustly", "ats": "greenhouse", "slug": "trustly", "linkedin": "3041918" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Einride", "ats": "greenhouse", "slug": "einride", "linkedin": "13109807" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Acast", "ats": "greenhouse", "slug": "acast", "linkedin": "3780751" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "iZettle (PayPal)", "ats": "linkedin", "slug": "", "linkedin": "2718556" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Hexagon AB", "ats": "linkedin", "slug": "", "linkedin": "162648" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Kry (Livi)", "ats": "greenhouse", "slug": "kry", "linkedin": "5073918" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Mentimeter", "ats": "greenhouse", "slug": "mentimeter", "linkedin": "2892578" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "Cint", "ats": "linkedin", "slug": "", "linkedin": "6644" },
+  { "group": "SWEDEN_REMOTE_FRIENDLY", "name": "ABBYY Sweden", "ats": "linkedin", "slug": "", "linkedin": "156472" },
+
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Voi Technology", "ats": "greenhouse", "slug": "voi", "linkedin": "13478557" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Volvo Cars (Tech)", "ats": "linkedin", "slug": "", "linkedin": "1284" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "IFS", "ats": "linkedin", "slug": "", "linkedin": "5402" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Scania (Tech)", "ats": "linkedin", "slug": "", "linkedin": "1267" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Neko Health", "ats": "ashbyhq", "slug": "neko", "linkedin": "90752689" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Soundtrack Your Brand", "ats": "linkedin", "slug": "", "linkedin": "5286538" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Bokio", "ats": "linkedin", "slug": "", "linkedin": "10406056" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Anyfin", "ats": "linkedin", "slug": "", "linkedin": "11265754" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Juni", "ats": "greenhouse", "slug": "juni", "linkedin": "68993834" },
+  { "group": "SWEDEN_REMOTE_POSSIBLE", "name": "Minna Technologies", "ats": "linkedin", "slug": "", "linkedin": "10558745" }
 ]
