@@ -20,7 +20,7 @@ jobs:
 
       - run: npm install
 
-      - run: ./node_modules/.bin/tsx src/index.ts
+      - run: node --import tsx/esm src/index.ts
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
