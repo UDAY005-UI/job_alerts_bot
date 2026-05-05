@@ -13,7 +13,7 @@ const TELEGRAM_MAX_CHARS   = 4000; // safe margin under 4096
 
 interface Company {
   name: string;
-  ats: "greenhouse" | "lever";
+  ats: "greenhouse" | "lever" | "smartrecruiters" | "linkedin";
   slug: string;
   linkedin?: string;
 }
@@ -23,7 +23,7 @@ interface Job {
   title: string;
   location: string;
   url: string;
-  source: "greenhouse" | "lever" | "linkedin";
+  source: "greenhouse" | "lever" | "smartrecruiters" | "linkedin";
 }
 
 type FetchResult =
@@ -72,6 +72,28 @@ const isEntryLevel = (title: string)    => ENTRY_KEYWORDS.some(kw => title.toLow
 const isIndia      = (location: string) => INDIA_KEYWORDS.some(kw => location.toLowerCase().includes(kw));
 
 // ── HTTP ──────────────────────────────────────────────────────────────────────
+async function fetchSmartRecruiters(slug: string): Promise<FetchResult> {
+  const res = await safeFetch(
+    `https://api.smartrecruiters.com/v1/companies/${slug}/postings?limit=100`
+  );
+  if (!res) return { ok: false, reason: "fetch failed" };
+
+  let data: any;
+  try { data = await res.json(); } catch { return { ok: false, reason: "JSON parse error" }; }
+  if (!Array.isArray(data.content)) return { ok: false, reason: "missing content[]" };
+
+  const jobs: Job[] = data.content
+    .filter((j: any) => isEntryLevel(j.name) && isIndia(j.location?.country === "IN" ? "india" : j.location?.city ?? ""))
+    .map((j: any) => ({
+      id:       "sr_" + j.id,
+      title:    j.name.trim(),
+      location: (j.location?.city ?? "India").trim(),
+      url:      `https://jobs.smartrecruiters.com/${slug}/${j.id}`,
+      source:   "smartrecruiters" as const,
+    }));
+
+  return { ok: true, jobs };
+}
 
 async function safeFetch(url: string): Promise<Response | null> {
   const ctrl  = new AbortController();
@@ -187,10 +209,23 @@ async function fetchLinkedIn(linkedinId: string): Promise<FetchResult> {
 // ── Orchestrator ──────────────────────────────────────────────────────────────
 
 async function fetchCompany(company: Company): Promise<Job[]> {
-  const label   = company.ats === "greenhouse" ? "GH" : "LV";
-  const primary = company.ats === "greenhouse"
-    ? await fetchGreenhouse(company.slug)
-    : await fetchLever(company.slug);
+  // LinkedIn-only companies go straight to fallback
+  if (company.ats === "linkedin") {
+    if (!company.linkedin) return [];
+    const result = await fetchLinkedIn(company.linkedin);
+    if (result.ok) {
+      console.log(`  [LI] ${company.name}: ${result.jobs.length} relevant job(s)`);
+      return result.jobs;
+    }
+    console.warn(`  [LI] ${company.name}: failed -- ${result.reason}`);
+    return [];
+  }
+
+  const label = company.ats === "greenhouse" ? "GH" : company.ats === "lever" ? "LV" : "SR";
+  const primary =
+    company.ats === "greenhouse"     ? await fetchGreenhouse(company.slug) :
+    company.ats === "lever"          ? await fetchLever(company.slug) :
+    /* smartrecruiters */              await fetchSmartRecruiters(company.slug);
 
   if (primary.ok) {
     console.log(`  [${label}] ${company.name}: ${primary.jobs.length} relevant job(s)`);
@@ -199,18 +234,13 @@ async function fetchCompany(company: Company): Promise<Job[]> {
 
   console.warn(`  [${label}] ${company.name}: failed -- ${primary.reason}`);
 
-  if (!company.linkedin) {
-    console.log(`  [LI] ${company.name}: no linkedin id, skipping fallback`);
-    return [];
-  }
-
+  if (!company.linkedin) return [];
   const fallback = await fetchLinkedIn(company.linkedin);
   if (fallback.ok) {
-    console.log(`  [LI] ${company.name}: ${fallback.jobs.length} relevant job(s)`);
+    console.log(`  [LI fallback] ${company.name}: ${fallback.jobs.length} relevant job(s)`);
     return fallback.jobs;
   }
-
-  console.warn(`  [LI] ${company.name}: also failed -- ${fallback.reason}`);
+  console.warn(`  [LI fallback] ${company.name}: also failed -- ${fallback.reason}`);
   return [];
 }
 
