@@ -20,8 +20,9 @@ interface Job {
 
 function loadSeen(): Set<string> {
   if (!fs.existsSync(SEEN_PATH)) return new Set();
-  const data = JSON.parse(fs.readFileSync(SEEN_PATH, "utf-8"));
-  return new Set(data);
+  const raw = fs.readFileSync(SEEN_PATH, "utf-8").trim();
+  if (!raw) return new Set();
+  return new Set(JSON.parse(raw));
 }
 
 function saveSeen(seen: Set<string>) {
